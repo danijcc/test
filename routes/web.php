@@ -25,7 +25,7 @@ require __DIR__.'/auth.php';
 //->middleware(['auth']); 
 Route::view ('/','home')->name('home');    
 Route::view ('/quienes-somos','about')->name('about');
-
+//
 
 Route::resource('portafolio', 'ProjectController')
 ->names('projects')
