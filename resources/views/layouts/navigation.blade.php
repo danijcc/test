@@ -4,7 +4,7 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
@@ -12,20 +12,8 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    {{--  <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>  --}}
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                        @lang('Home')
-                    </x-nav-link>
-                    <x-nav-link :href="route('about')" :active="request()->routeIs('home')">
-                       @lang('About')
-                    </x-nav-link>
-                    <x-nav-link :href="route('projects.index')" :active="request()->routeIs('home')">
-                        @lang('Projects')
-                    </x-nav-link>
-                    <x-nav-link :href="route('contact')" :active="request()->routeIs('home')">
-                        @lang('Contact')
                     </x-nav-link>
                 </div>
             </div>
