@@ -29,18 +29,42 @@
                     >@lang('Contact')</a>
                 </li>
             
-            <li class="nav-item">
+            {{--  <li class="nav-item">
                 <a class="nav-link {{ setActive('dashboard') }} "
                 href="{{ route('dashboard')}}"
-                >@lang('Dashboard')</a></li>
+                >@lang('Dashboard')</a></li>  --}}
             @guest
                 <li class="nav-item">
                     <a class="nav-link {{ setActive('login') }}"
                     href="{{ route('login')}}"
                     >@lang('Login')</a></li>
             @endguest
+            @auth
                 </ul>
-                
+                    
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                    
+                </form>
+            @endauth
+            @guest
+            <li class="nav-item">
+                <a class="nav-link {{ setActive('register') }}"
+                href="{{ route('register') }}"
+                >@lang('Register')</a>
+            </li>
+            @endguest
+            @auth
+            <h1>Bienvenido:</h1>&nbsp&nbsp
+            <div>{{ Auth::user()->name }}</div>
+            @endauth
         </div>
         <button class="nav-toggler" type="button" 
         data-toggle="collapse"
