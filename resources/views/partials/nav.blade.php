@@ -61,6 +61,10 @@
                 >@lang('Register')</a>
             </li>
             @endguest
+            @auth
+            <h1>Bienvenido:</h1>&nbsp&nbsp
+            <div>{{ Auth::user()->name }}</div>
+            @endauth
         </div>
         <button class="nav-toggler" type="button" 
         data-toggle="collapse"
