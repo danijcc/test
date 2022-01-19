@@ -54,7 +54,13 @@
                     
                 </form>
             @endauth
-                
+            @guest
+            <li class="nav-item">
+                <a class="nav-link {{ setActive('register') }}"
+                href="{{ route('register') }}"
+                >@lang('Register')</a>
+            </li>
+            @endguest
         </div>
         <button class="nav-toggler" type="button" 
         data-toggle="collapse"
